@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %} 
+<title>{% block title %} {% endblock %} </title>
+<style>
+{% block css %} {% endblock %}
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="footer, address, phone, icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">     
+
+</head>
+<body style="font-family: Georgia, 'Times New Roman', Times, serif">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#"></i> A2M</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-4">
+          <li class="nav-item align-items-center">
+            <input type="text" placeholder="Search..">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="openForm()">Sign in</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#"><i class="bi bi-cart"></i>Cart</a>
+            </li>
+          
+        </ul>
+        
+      </div>
+  </nav>
+ 
+{% block body %}
+<div class="container"></div>
+{% endblock %}
+  
+  <footer class="bg-dark text-white center text-lg-start" style="margin-top: 20px;">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2020 a2m.in —
+      <a class="text-light" href="https://mdbootstrap.com/">---</a>
+
+      <ul class="bd-footer-links">
+        <p>follow on us
+        <a href="#" class="fa fa-facebook">  </a>
+        <a href="#" class="fa fa-twitter">  </a>
+        <a href="#" class="fa fa-google">  </a>
+        <a href="#" class="fa fa-linkedin">  </a>
+        <a href="#" class="fa fa-youtube">  </a>
+        <a href="#" class="fa fa-instagram">  </a></p>
+      </ul>
+    </div>
+    <!-- Copyright -->
+  </footer>
+ </body>
+ 
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<div align="right">
+		<form onsubmit="return validate();" action="prd.html" style="border-radius: 3px;width: 500px;height: 500px;background-color: bisque;">
+			{% csrf_token %}
+			<table id="table">
+				<tr>
+				<td style="padding-left: 5px;padding-bottom: 3px;"><I style="font-size: 35px;">Username</I></td><br><td><input type="text" id="username" name="username" placeholder="..@gmail.com">
+				<lable id="lbluser" style="color:red; visibility:hidden;">Invalid</lable></td>
+				</tr>
+				
+				<tr>
+				<td style="padding-right: 30px;padding-bottom: 3px;"><I style="font-size: 35px;">Password</I></td><br><td><input type="password" id="password" name="password" placeholder="upper lower spc ch _">
+				<lable id="lbluser" style="color:red; visibility:hidden;">Invalid</lable></td>
+				</tr>
+				<tr>
+					<td colspan = "2"><input type="submit" value="Submit" ></td>
+				</tr>
+				<td><p style="font-size: 20px;">if you are a new user,<a href="register.html">register</a></td>
+			</table>
+			
+		</form>
+	</div>
+</body>
+</html>
