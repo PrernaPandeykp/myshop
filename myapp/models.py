@@ -3,8 +3,7 @@ from django.contrib.auth.models import User
 users = User.objects.values()
 
 class Product(models.Model):
-    index=models.AutoField
-    product_id = models.AutoField
+    
     gender=models.CharField(max_length=10,default="")
     master_category=models.CharField(max_length=50,default="")
     sub_category=models.CharField(max_length=50,default="")
@@ -27,6 +26,3 @@ class Login(models.Model):
     print(username,password)
 
                            
-class Publisher(models.Model):
-    name = models.CharField(max_length=30)
-    city = models.CharField(max_length=60)

@@ -1,6 +1,6 @@
 from django.shortcuts import render,HttpResponse
-from .models import Product as Product_view 
-from .models import Publisher
+from .models import Product 
+
 from math import ceil
 import csv
 # Create your views here.
@@ -39,21 +39,10 @@ def tracker(request):
 def search(request):
     return HttpResponse("search")
 
-def productview(request):
+def product(request):
     return HttpResponse("product")
 
 def checkout(request):
     return HttpResponse("checkout")
 
-def export(request):
-    response = HttpResponse(content_type='text/csv')
 
-    writer = csv.writer(response)
-    writer.writerow(['First Name', 'Last Name', 'Email', 'IP Address'])
-
-    for member in Product_view.objects.all().values_list('first_name', 'last_name', 'email', 'ip_address'):
-        writer.writerow(member)
-
-    response['Content-Disposition'] = 'attachment; filename="members.csv"'
-
-    return response
