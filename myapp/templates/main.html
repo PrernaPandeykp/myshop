@@ -68,26 +68,27 @@ padding-right: 10px;
 </div>
 <!-----------------items/accessories--------------------->
 <section id="items">
+
   <div class="container">
     <div class="col-12">
-      <h1 style="margin-top: 40px;margin-bottom: 20px;">Accessories</h1>
+      <h1 style="margin-top: 40px;margin-bottom: 20px;"></h1>
     </div>
     <div class="row" style="margin-bottom: 10px;">
+      {% for j in cat_prods %}
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-dark">All</button>
-        <button type="button" class="btn btn-dark"><a href="#books">Books</a></button>
-        <button type="button" class="btn btn-dark"><a href="#clothes">Clothes</a></button>
-        <button type="button" class="btn btn-dark"><a href="#electronics">Electronics</a></button>
+        <button type="button" class="btn btn-dark"><a href="#electronics">{{j}}</a></button>
       </div>
+      {% endfor %}
     </div>
   </div>
   </div>
+
 </section>
 
 <!------------------books slider------------->
 <div class="container" id="Accessories">
   {% for product,range, nslides in allprods %}
-  <h1 class="my-4">{{product.0.category}}</h1>
+  <h1 class="my-4">{{product.0.master_category}}</h1>
   <div class=" row">
 
     <div id="demo{{forloop.counter}}" class=" col carousel slide my-3" data-ride="carousel">
@@ -109,10 +110,11 @@ padding-right: 10px;
           {% for i in product %}
           <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="card" style="width:18rem;">
-              <img width="200" height="220" src="/media/{{i.image}}" class="card-img-top" alt="...">
+              <img width="200" height="220" src="{{ i.image_url }}" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">{{i.product_name}}</h5>
-                <p class="card-text">{{i.desc}}</p>
+                <p class="card-text">{{i.article_type}}</p>
+                <p class="card-text">{{i.price}}</p>
                 <button id="pr{{i.id}}" class="btn btn-primary cart">add to cart</button>
               </div>
             </div>
