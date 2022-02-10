@@ -1,7 +1,7 @@
 import pandas as pd
 from .models import Product
 
-df = pd.read_csv("D:\django start\mysite\Fashion_Dataset.csv")
+df = pd.read_csv("D:\Aspiro-task\mysite\fashion_dataset.csv")
 
 
 def add_product():

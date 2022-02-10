@@ -13,7 +13,7 @@ def main(request):
 
     cats = {item["master_category"] for item in cat_prods}
     for cat in cats:
-        prod = Product.objects.filter(master_category=cat)
+        prod = Product.objects.filter(master_category=cat)[:10]
         n = len(prod)
         nslides = n // 4 + ceil((n / 4) - (n // 4))
         allprods.append([prod, range(1, nslides), nslides])
